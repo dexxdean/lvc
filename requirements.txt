@@ -1,0 +1,40 @@
+# Core Audio Processing
+pyaudio>=0.2.13
+sounddevice>=0.4.6
+webrtcvad>=2.0.10
+numpy>=1.24.0
+
+# Wake Word Detection
+openwakeword @ git+https://github.com/dscripka/openwakeword.git@main
+
+# Speech-to-Text
+openai-whisper>=20231117
+torch>=2.0.0  # Required for Whisper
+torchaudio>=2.0.0  # Required for Whisper
+
+# Natural Language Processing
+pyyaml>=6.0
+pydantic>=2.5.0
+
+# System Integration
+pyautogui>=0.9.54
+pyobjc-framework-Cocoa>=10.0  # For macOS integration
+pyobjc-framework-CoreAudio>=10.0  # For audio on macOS
+
+# CLI & Utilities
+click>=8.1.0
+loguru>=0.7.2
+python-dotenv>=1.0.0
+watchdog>=3.0.0  # For config hot-reload
+
+# Testing
+pytest>=7.4.0
+pytest-mock>=3.12.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Development
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.5.0
+flake8>=6.0.0

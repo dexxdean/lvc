@@ -1,0 +1,262 @@
+# System Configuration for Logic Voice Control
+
+# Application Settings
+app:
+  name: "Logic Voice Control"
+  version: "0.0.1"
+  mode: "production"  # development, testing, production
+  
+  # Startup behavior
+  auto_start: false
+  start_minimized: false
+  check_updates: false
+
+# Speech-to-Text Settings
+stt:
+  # Whisper model selection
+  model: "small"  # tiny, base, small, medium, large
+  language: "de"  # German primary, English secondary
+  
+  # Model paths
+  model_path: "models/whisper/"
+  download_on_start: true
+  
+  # Processing
+  compute_type: "int8"  # fp32, fp16, int8 (for speed)
+  device: "cpu"  # cpu, cuda, mps (Apple Silicon)
+  
+  # Accuracy settings
+  beam_size: 5
+  best_of: 5
+  temperature: 0.0  # 0 = deterministic
+  
+  # Language detection
+  detect_language: false  # Use specified language
+  
+  # Phrase hints (improve recognition)
+  phrase_hints:
+    - "Logic Pro"
+    - "Spur"
+    - "Marker"
+    - "Aufnahme"
+    - "Wiedergabe"
+
+# Natural Language Understanding
+nlu:
+  # Intent recognition
+  intent_engine: "rule_based"  # rule_based, ml_based (future)
+  
+  # Confidence thresholds
+  min_confidence: 0.8
+  confirmation_threshold: 0.6  # Ask for confirmation below this
+  
+  # Fuzzy matching
+  use_fuzzy_matching: true
+  fuzzy_threshold: 0.85
+  
+  # Number normalization
+  normalize_numbers: true  # "drei" -> 3
+  
+  # Slot extraction
+  max_slot_distance: 3  # words between slot and keyword
+
+# Logic Pro Integration
+logic_pro:
+  # Application paths
+  app_path: "/Applications/Logic Pro X.app"
+  
+  # Version compatibility
+  min_version: "11.0.0"
+  check_version_on_start: true
+  
+  # Connection method priority
+  integration_priority:
+    - "applescript"
+    - "key_commands"
+    - "accessibility_api"
+  
+  # AppleScript settings
+  applescript:
+    timeout: 5.0  # seconds
+    retry_count: 3
+    retry_delay: 0.5  # seconds
+  
+  # Key command settings
+  key_commands:
+    delay_after: 0.1  # seconds after sending key
+    use_native_events: true
+  
+  # Status checking
+  check_running: true
+  check_project_open: true
+  auto_launch: false  # Launch Logic if not running
+
+# Feedback & Accessibility
+feedback:
+  # Text-to-Speech
+  tts:
+    enabled: true
+    voice: "Anna"  # macOS German voice
+    rate: 200  # words per minute
+    volume: 0.8
+    
+    # Alternative voices
+    fallback_voices:
+      - "Petra"
+      - "Markus"
+      - "System Voice"
+  
+  # Response types
+  responses:
+    success: "voice"  # voice, sound, both, none
+    error: "both"
+    confirmation: "voice"
+    
+  # VoiceOver integration
+  voiceover:
+    compatible: true
+    announce_state_changes: true
+    use_voiceover_voice: false  # Use our own TTS
+
+# System Resources
+resources:
+  # Memory management
+  max_memory_mb: 512
+  
+  # CPU usage
+  max_cpu_percent: 50
+  process_priority: "normal"  # low, normal, high
+  
+  # Disk usage
+  max_log_size_mb: 100
+  max_cache_size_mb: 500
+  
+  # Cleanup
+  auto_cleanup: true
+  cleanup_interval_hours: 24
+
+# Logging Configuration
+logging:
+  # Log levels
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  
+  # File logging
+  file:
+    enabled: true
+    path: "logs/"
+    rotation: "1 day"
+    retention: "7 days"
+    max_size: "10 MB"
+  
+  # Console logging
+  console:
+    enabled: true
+    colorized: true
+    format: "simple"  # simple, detailed, json
+  
+  # Performance logging
+  performance:
+    enabled: true
+    log_latency: true
+    log_memory: true
+    interval: 60  # seconds
+
+# Security & Privacy
+security:
+  # Data handling
+  store_audio: false  # Don't store audio recordings
+  store_transcripts: false  # Don't store transcribed text
+  
+  # Network
+  allow_network: false  # Fully offline
+  check_ssl: true
+  
+  # Permissions
+  require_admin: false
+  sandbox_mode: true
+
+# Development/Debug Settings
+debug:
+  # Debug mode
+  enabled: false
+  
+  # Dry run (no actual commands executed)
+  dry_run: false
+  
+  # Mock services
+  mock_logic_pro: false
+  mock_audio: false
+  
+  # Profiling
+  profile: false
+  profile_output: "profile/"
+  
+  # Test data
+  use_test_audio: false
+  test_audio_path: "tests/fixtures/audio/"
+
+# Error Handling
+error_handling:
+  # Retry behavior
+  max_retries: 3
+  retry_delay: 1.0  # seconds
+  exponential_backoff: true
+  
+  # Error reporting
+  report_errors: false  # No telemetry
+  
+  # Recovery
+  auto_restart: true
+  restart_delay: 5.0  # seconds
+  max_restarts: 3
+  
+  # Fallback behavior
+  fallback_to_keyboard: true
+  show_error_notifications: true
+
+# Localization
+localization:
+  # Primary language
+  primary: "de_DE"
+  
+  # Supported languages
+  supported:
+    - "de_DE"  # German
+    - "en_US"  # English
+  
+  # Date/time format
+  date_format: "%d.%m.%Y"
+  time_format: "%H:%M:%S"
+  
+  # Number format
+  decimal_separator: ","
+  thousands_separator: "."
+
+# Update Settings
+updates:
+  # Auto update check
+  check_on_start: false
+  check_interval_days: 7
+  
+  # Update channel
+  channel: "stable"  # stable, beta, dev
+  
+  # Update server (when implemented)
+  update_url: ""
+  
+# Feature Flags
+features:
+  # Experimental features
+  use_neural_engine: false
+  use_advanced_nlu: false
+  multi_language: false
+  
+  # Beta features
+  command_chaining: false  # Execute multiple commands
+  macro_support: false  # Custom command sequences
+  plugin_control: false  # Control plugins
+  
+  # Coming soon
+  midi_control: false
+  automation_control: false
+  mixer_control: false

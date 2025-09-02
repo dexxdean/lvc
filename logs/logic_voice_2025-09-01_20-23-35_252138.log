@@ -1,0 +1,36 @@
+2025-09-01 20:23:35.255 | INFO     | __main__:__init__:61 - 🎙️ Logic Voice Control starting...
+2025-09-01 20:23:35.256 | INFO     | __main__:__init__:62 - Mode: LIVE
+2025-09-01 20:23:35.256 | INFO     | __main__:__init__:63 - Latency: NORMAL
+2025-09-01 20:23:35.256 | INFO     | src.config.loader:_load_config:122 - 📋 Using default configuration
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:_load_env_overrides:199 - 🔧 Audio device override: PreSonus Quantum 2
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:_load_env_overrides:204 - 🌐 Language override: de
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:_load_env_overrides:209 - 🤖 Model override: small
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:_load_env_overrides:215 - 🎵 Sample rate override: 48000
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:_load_env_overrides:232 - 📝 Log level override: INFO
+2025-09-01 20:23:35.256 | INFO     | src.config.loader:__init__:98 - ⚙️ Configuration loaded
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:__init__:99 - 🔧 STT Model: small
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:__init__:100 - 🌐 Language: de
+2025-09-01 20:23:35.256 | DEBUG    | src.config.loader:__init__:101 - 🎤 Audio Device: PreSonus Quantum 2
+2025-09-01 20:23:35.256 | INFO     | src.audio.capture:__init__:60 - 🎤 Initializing audio capture (device: PreSonus Quantum 2)
+2025-09-01 20:23:35.296 | WARNING  | src.audio.capture:_init_audio:75 - ⚠️ Device 'PreSonus Quantum 2' not found, using default
+2025-09-01 20:23:35.296 | SUCCESS  | src.audio.capture:_init_audio:85 - ✅ Audio system initialized
+2025-09-01 20:23:35.296 | INFO     | src.audio.wake_word:__init__:44 - 🎯 Wake word detector initialized
+2025-09-01 20:23:35.296 | INFO     | src.audio.wake_word:__init__:45 - 📝 Wake words: hey logic, logic, computer
+2025-09-01 20:23:35.296 | INFO     | src.audio.wake_word:__init__:46 - 🎚️ Threshold: 0.8
+2025-09-01 20:23:35.297 | INFO     | src.stt.whisper_adapter:__init__:53 - 🔧 Using CPU backend to avoid MPS compatibility issues
+2025-09-01 20:23:35.297 | INFO     | src.stt.whisper_adapter:__init__:57 - 🤖 Initializing Whisper STT (model: small, device: cpu)
+2025-09-01 20:23:36.735 | SUCCESS  | src.stt.whisper_adapter:__init__:62 - ✅ Whisper model 'small' loaded successfully
+2025-09-01 20:23:36.736 | INFO     | src.nlu.parser:__init__:82 - 🧠 Intent parser initialized with 11 intent types
+2025-09-01 20:23:36.736 | INFO     | src.router.dispatcher:__init__:50 - 🎮 Command dispatcher initialized (LIVE)
+2025-09-01 20:23:36.736 | INFO     | src.router.dispatcher:__init__:51 - 📋 Available commands: start_recording, stop_recording, play, pause, save_project, new_track, volume_up, volume_down, mute, undo, help
+2025-09-01 20:23:36.736 | INFO     | src.feedback.tts:__init__:38 - 🗣️ TTS Feedback initialized
+2025-09-01 20:23:36.736 | INFO     | src.feedback.tts:__init__:39 - 🖥️ System: Darwin
+2025-09-01 20:23:36.736 | INFO     | src.feedback.tts:__init__:40 - 🎤 Voice: default
+2025-09-01 20:23:36.736 | INFO     | src.feedback.tts:__init__:41 - ⏩ Rate: 200 WPM
+2025-09-01 20:23:36.764 | WARNING  | src.feedback.tts:_check_tts_availability:74 - ⚠️ TTS may not be available on Darwin
+2025-09-01 20:23:36.765 | SUCCESS  | __main__:_init_components:111 - ✅ All components initialized successfully
+2025-09-01 20:23:36.765 | INFO     | __main__:run:120 - 👂 Listening for wake word...
+2025-09-01 20:23:45.212 | INFO     | src.audio.wake_word:detect:77 - 🎯 Simulated wake word detection!
+2025-09-01 20:23:45.213 | INFO     | __main__:run:129 - 🎯 Wake word detected!
+2025-09-01 20:23:45.213 | DEBUG    | src.feedback.tts:speak:90 - 🗣️ Speaking: 'Ja, ich höre'
+2025-09-01 20:23:47.196 | INFO     | src.audio.capture:capture_command:219 - 🎤 Listening for command...

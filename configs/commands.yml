@@ -1,0 +1,277 @@
+# Logic Voice Control - Command Definitions
+# Format: intent, patterns, action, feedback
+
+commands:
+  # Transport Controls
+  - intent: "play"
+    patterns: 
+      - "play"
+      - "wiedergabe"
+      - "start"
+      - "abspielen"
+      - "wiedergabe starten"
+    action:
+      type: "key_command"
+      value: "Space"
+    feedback: "Wiedergabe gestartet"
+    confidence: 0.8
+
+  - intent: "stop"
+    patterns:
+      - "stop"
+      - "stopp"
+      - "anhalten"
+      - "wiedergabe stoppen"
+    action:
+      type: "key_command"
+      value: "Space"
+    feedback: "Wiedergabe gestoppt"
+    confidence: 0.8
+
+  - intent: "record"
+    patterns:
+      - "record"
+      - "aufnahme"
+      - "aufnehmen"
+      - "recording"
+      - "aufnahme starten"
+    action:
+      type: "key_command"
+      value: "R"
+    feedback: "Aufnahme gestartet"
+    confidence: 0.85
+
+  - intent: "rewind"
+    patterns:
+      - "rewind"
+      - "zurück"
+      - "zurückspulen"
+      - "anfang"
+      - "zum anfang"
+    action:
+      type: "key_command"
+      value: "Return"
+    feedback: "Zum Anfang gesprungen"
+    confidence: 0.8
+
+  - intent: "forward"
+    patterns:
+      - "forward"
+      - "vor"
+      - "vorwärts"
+      - "vorspulen"
+      - "weiter"
+    action:
+      type: "key_command"
+      value: "Shift+Return"
+    feedback: "Vorwärts gesprungen"
+    confidence: 0.8
+
+  - intent: "loop_toggle"
+    patterns:
+      - "loop an"
+      - "loop aus"
+      - "loop toggle"
+      - "schleife an"
+      - "schleife aus"
+    action:
+      type: "key_command"
+      value: "C"
+    feedback: "Loop umgeschaltet"
+    confidence: 0.85
+
+  # Track Operations
+  - intent: "select_track"
+    patterns:
+      - "spur {n}"
+      - "track {n}"
+      - "spur {n} wählen"
+      - "spur nummer {n}"
+      - "gehe zu spur {n}"
+    slots: 
+      n: "int"
+    action:
+      type: "applescript"
+      value: |
+        tell application "Logic Pro"
+          set track index of current track to {n}
+        end tell
+    feedback: "Spur {n} ausgewählt"
+    confidence: 0.85
+
+  - intent: "mute_track"
+    patterns:
+      - "spur {n} stumm"
+      - "mute spur {n}"
+      - "spur {n} stummschalten"
+      - "stumm spur {n}"
+    slots:
+      n: "int"
+    action:
+      type: "applescript"
+      value: |
+        tell application "Logic Pro"
+          set mute of track {n} to true
+        end tell
+    feedback: "Spur {n} stummgeschaltet"
+    confidence: 0.85
+
+  - intent: "solo_track"
+    patterns:
+      - "spur {n} solo"
+      - "solo spur {n}"
+      - "nur spur {n}"
+    slots:
+      n: "int"
+    action:
+      type: "applescript"
+      value: |
+        tell application "Logic Pro"
+          set solo of track {n} to true
+        end tell
+    feedback: "Spur {n} solo"
+    confidence: 0.85
+
+  - intent: "volume_up"
+    patterns:
+      - "lauter"
+      - "lautstärke hoch"
+      - "volume up"
+      - "lautstärke erhöhen"
+    action:
+      type: "key_command"
+      value: "Cmd+Up"
+    feedback: "Lautstärke erhöht"
+    confidence: 0.8
+
+  - intent: "volume_down"
+    patterns:
+      - "leiser"
+      - "lautstärke runter"
+      - "volume down"
+      - "lautstärke verringern"
+    action:
+      type: "key_command"
+      value: "Cmd+Down"
+    feedback: "Lautstärke verringert"
+    confidence: 0.8
+
+  # Markers
+  - intent: "set_marker"
+    patterns:
+      - "marker setzen"
+      - "marker hier"
+      - "setze marker"
+      - "marker erstellen"
+      - "neue marke"
+    action:
+      type: "key_command"
+      value: "Cmd+K"
+    feedback: "Marker gesetzt"
+    confidence: 0.85
+
+  - intent: "next_marker"
+    patterns:
+      - "nächster marker"
+      - "zum nächsten marker"
+      - "marker vor"
+      - "weiter zum marker"
+    action:
+      type: "key_command"
+      value: "Cmd+Right"
+    feedback: "Zum nächsten Marker"
+    confidence: 0.85
+
+  - intent: "prev_marker"
+    patterns:
+      - "voriger marker"
+      - "vorheriger marker"
+      - "zum vorigen marker"
+      - "marker zurück"
+    action:
+      type: "key_command"
+      value: "Cmd+Left"
+    feedback: "Zum vorigen Marker"
+    confidence: 0.85
+
+  # System Commands
+  - intent: "undo"
+    patterns:
+      - "rückgängig"
+      - "undo"
+      - "zurück"
+      - "rückgängig machen"
+      - "letztes rückgängig"
+    action:
+      type: "key_command"
+      value: "Cmd+Z"
+    feedback: "Rückgängig gemacht"
+    confidence: 0.9
+
+  - intent: "redo"
+    patterns:
+      - "wiederholen"
+      - "redo"
+      - "wiederherstellen"
+      - "vorwärts"
+    action:
+      type: "key_command"
+      value: "Cmd+Shift+Z"
+    feedback: "Wiederhergestellt"
+    confidence: 0.85
+
+  - intent: "metronome_toggle"
+    patterns:
+      - "metronom an"
+      - "metronom aus"
+      - "metronome"
+      - "click an"
+      - "click aus"
+    action:
+      type: "key_command"
+      value: "K"
+    feedback: "Metronom umgeschaltet"
+    confidence: 0.85
+
+  - intent: "count_in_toggle"
+    patterns:
+      - "zähler an"
+      - "zähler aus"
+      - "count in"
+      - "einzähler"
+      - "vorzähler"
+    action:
+      type: "key_command"
+      value: "Shift+K"
+    feedback: "Einzähler umgeschaltet"
+    confidence: 0.85
+
+  # Project Commands
+  - intent: "save"
+    patterns:
+      - "speichern"
+      - "save"
+      - "projekt speichern"
+      - "sichern"
+    action:
+      type: "key_command"
+      value: "Cmd+S"
+    feedback: "Projekt gespeichert"
+    confidence: 0.9
+
+  - intent: "save_as"
+    patterns:
+      - "speichern als"
+      - "save as"
+      - "speichern unter"
+    action:
+      type: "key_command"
+      value: "Cmd+Shift+S"
+    feedback: "Speichern unter Dialog geöffnet"
+    confidence: 0.85
+
+# Confidence thresholds
+thresholds:
+  default: 0.8
+  low_confidence_prompt: true
+  confirmation_required: 0.6

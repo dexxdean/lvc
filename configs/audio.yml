@@ -1,0 +1,126 @@
+# Audio Configuration for Logic Voice Control
+
+# Audio Input Device Settings
+input:
+  device_name: "PreSonus Quantum 2"
+  channel: 1  # Input channel (1 = first channel)
+  sample_rate: 48000  # Hz
+  bit_depth: 24  # bits
+  buffer_size: 256  # samples (adjustable for latency)
+  
+  # Alternative device names (fallback)
+  fallback_devices:
+    - "Quantum 2"
+    - "PreSonus"
+    - "USB Audio Device"
+    - "Built-in Microphone"  # Last resort
+
+# Voice Activity Detection (VAD)
+vad:
+  enabled: true
+  aggressiveness: 2  # 0-3, higher = more aggressive
+  
+  # Energy thresholds
+  energy_threshold: 0.01  # Minimum energy for speech
+  
+  # Timing
+  speech_timeout: 1.5  # seconds of silence before stopping
+  max_recording_time: 5.0  # maximum recording duration
+  
+  # Pre/post speech buffer
+  pre_speech_buffer: 0.2  # seconds to capture before speech
+  post_speech_buffer: 0.5  # seconds to capture after speech
+
+# Wake Word Detection
+wake_word:
+  enabled: true
+  
+  # Wake phrases
+  models:
+    - "hey_logic"
+    - "hallo_logic"
+    - "hi_logic"
+  
+  # Detection parameters
+  threshold: 0.8  # 0.0-1.0, higher = more strict
+  
+  # Cooldown after detection
+  cooldown_time: 2.0  # seconds before next detection
+  
+  # Timeout for command after wake word
+  command_timeout: 10.0  # seconds to wait for command
+
+# Audio Processing
+processing:
+  # Noise reduction
+  noise_reduction:
+    enabled: true
+    strength: 0.5  # 0.0-1.0
+  
+  # Normalization
+  normalize:
+    enabled: true
+    target_level: -3.0  # dB
+  
+  # High-pass filter (remove low frequency noise)
+  highpass_filter:
+    enabled: true
+    cutoff_frequency: 80  # Hz
+
+# Performance Settings
+performance:
+  # Threading
+  use_threading: true
+  audio_thread_priority: "high"  # low, normal, high
+  
+  # Buffer management
+  circular_buffer_size: 10  # seconds of audio to keep
+  
+  # CPU optimization
+  enable_gpu: false  # For future Whisper GPU support
+  
+  # Latency mode
+  low_latency_mode: false  # Set via CLI flag
+
+# Audio Feedback
+feedback:
+  # Success/error sounds
+  sounds:
+    wake_detected: "sounds/wake.wav"
+    command_success: "sounds/success.wav"
+    command_error: "sounds/error.wav"
+    listening: "sounds/listening.wav"
+  
+  # Volume
+  sound_volume: 0.5  # 0.0-1.0
+  
+  # Use system sounds if files not found
+  use_system_sounds: true
+
+# Monitoring & Debug
+monitoring:
+  # Audio level monitoring
+  show_levels: false  # Show audio levels in console
+  level_update_rate: 10  # Hz
+  
+  # Recording for debugging
+  save_wake_words: false  # Save detected wake words
+  save_commands: false  # Save recognized commands
+  debug_audio_path: "debug/audio/"
+  
+  # Logging
+  log_audio_stats: true
+  stats_interval: 30  # seconds
+
+# Hardware-specific optimizations
+hardware:
+  # PreSonus Quantum 2 specific
+  quantum2:
+    use_thunderbolt: true
+    optimize_latency: true
+    preferred_buffer_sizes: [128, 256, 512]
+  
+  # Apple Silicon optimization
+  apple_silicon:
+    use_neural_engine: true  # When available
+    use_accelerate_framework: true

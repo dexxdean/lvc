@@ -1,0 +1,137 @@
+2025-09-02 19:57:41.736 | INFO     | __main__:__init__:64 - 🎙️ Logic Voice Control starting...
+2025-09-02 19:57:41.736 | INFO     | __main__:__init__:65 - Mode: DRY RUN
+2025-09-02 19:57:41.736 | INFO     | __main__:__init__:66 - Latency: NORMAL
+2025-09-02 19:57:41.736 | INFO     | src.config.loader:_load_config:122 - 📋 Using default configuration
+2025-09-02 19:57:41.736 | INFO     | src.config.loader:_try_load_default_configs:138 - 📋 Found default config: config.yml
+2025-09-02 19:57:41.736 | INFO     | src.config.loader:_load_config:106 - 📋 Loading config from: config.yml
+2025-09-02 19:57:41.739 | SUCCESS  | src.config.loader:_load_config:116 - ✅ Configuration file loaded
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:_load_env_overrides:207 - 🔧 Audio device override: PreSonus Quantum 2
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:_load_env_overrides:212 - 🌐 Language override: de
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:_load_env_overrides:217 - 🤖 Model override: small
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:_load_env_overrides:223 - 🎵 Sample rate override: 48000
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:_load_env_overrides:240 - 📝 Log level override: INFO
+2025-09-02 19:57:41.740 | INFO     | src.config.loader:__init__:98 - ⚙️ Configuration loaded
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:__init__:99 - 🔧 STT Model: small
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:__init__:100 - 🌐 Language: de
+2025-09-02 19:57:41.740 | DEBUG    | src.config.loader:__init__:101 - 🎤 Audio Device: PreSonus Quantum 2
+2025-09-02 19:57:41.740 | INFO     | src.audio.capture:__init__:60 - 🎤 Initializing audio capture (device: PreSonus Quantum 2)
+2025-09-02 19:57:41.781 | WARNING  | src.audio.capture:_init_audio:75 - ⚠️ Device 'PreSonus Quantum 2' not found, using default
+2025-09-02 19:57:41.781 | SUCCESS  | src.audio.capture:_init_audio:85 - ✅ Audio system initialized
+2025-09-02 19:57:41.781 | INFO     | src.audio.wake_word:__init__:48 - 🎯 Wake word detector initialized
+2025-09-02 19:57:41.781 | INFO     | src.audio.wake_word:__init__:49 - 📝 Wake words: hey logic, hallo logic, hi logic, computer, logik
+2025-09-02 19:57:41.781 | INFO     | src.audio.wake_word:__init__:50 - 🎚️ Threshold: 0.6
+2025-09-02 19:57:41.781 | INFO     | src.stt.whisper_adapter:__init__:53 - 🔧 Using CPU backend to avoid MPS compatibility issues
+2025-09-02 19:57:41.781 | INFO     | src.stt.whisper_adapter:__init__:57 - 🤖 Initializing Whisper STT (model: small, device: cpu)
+2025-09-02 19:57:43.251 | SUCCESS  | src.stt.whisper_adapter:__init__:62 - ✅ Whisper model 'small' loaded successfully
+2025-09-02 19:57:43.251 | DEBUG    | src.nlu.parser:_load_commands:51 -   Loaded test command: test
+2025-09-02 19:57:43.251 | DEBUG    | src.nlu.parser:_load_commands:51 -   Loaded test command: hello
+2025-09-02 19:57:43.251 | DEBUG    | src.nlu.parser:_load_commands:51 -   Loaded test command: time
+2025-09-02 19:57:43.251 | DEBUG    | src.nlu.parser:_load_commands:51 -   Loaded test command: stop
+2025-09-02 19:57:43.251 | INFO     | src.nlu.parser:__init__:43 - 📝 Intent parser initialized with 4 commands
+2025-09-02 19:57:43.251 | INFO     | src.router.dispatcher:__init__:37 - 🎮 Command dispatcher initialized (dry_run: True)
+2025-09-02 19:57:43.251 | INFO     | src.feedback.tts:__init__:46 - 🔊 TTS initialized (voice: Anna, rate: 200)
+2025-09-02 19:57:43.251 | SUCCESS  | __main__:_init_components:114 - ✅ All components initialized successfully
+2025-09-02 19:57:43.290 | SUCCESS  | src.audio.capture:start_stream:123 - 🎙️ Audio stream started
+2025-09-02 19:57:43.290 | INFO     | __main__:run:127 - 👂 Listening for wake word...
+2025-09-02 19:57:43.290 | INFO     | __main__:run:128 - 💡 Say 'Hey Logic' or 'Computer' to activate
+2025-09-02 19:57:43.843 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 46.1331)
+2025-09-02 19:57:44.882 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: 'Ja'
+2025-09-02 19:57:44.882 | DEBUG    | __main__:run:179 - 📝 Heard: 'Ja'
+2025-09-02 19:57:44.882 | DEBUG    | src.audio.wake_word:detect_in_text:101 - 🔍 Checking text: 'ja'
+2025-09-02 19:57:44.893 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 46.6669)
+2025-09-02 19:57:45.773 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: 'Ja'
+2025-09-02 19:57:45.773 | DEBUG    | __main__:run:179 - 📝 Heard: 'Ja'
+2025-09-02 19:57:45.774 | DEBUG    | src.audio.wake_word:detect_in_text:101 - 🔍 Checking text: 'ja'
+2025-09-02 19:57:45.785 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 48.0359)
+2025-09-02 19:57:46.684 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: 'Ja'
+2025-09-02 19:57:46.684 | DEBUG    | __main__:run:179 - 📝 Heard: 'Ja'
+2025-09-02 19:57:46.684 | DEBUG    | src.audio.wake_word:detect_in_text:101 - 🔍 Checking text: 'ja'
+2025-09-02 19:57:46.695 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 50.6653)
+2025-09-02 19:57:47.620 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:47.631 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 50.2308)
+2025-09-02 19:57:48.694 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:48.706 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 45.4286)
+2025-09-02 19:57:49.768 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:49.780 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 43.7133)
+2025-09-02 19:57:50.800 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:50.812 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.1132)
+2025-09-02 19:57:51.729 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:51.740 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.6790)
+2025-09-02 19:57:52.619 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:52.630 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.6497)
+2025-09-02 19:57:53.533 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:53.544 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.9809)
+2025-09-02 19:57:54.628 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:54.640 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 42.8005)
+2025-09-02 19:57:55.580 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:55.591 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 39.5867)
+2025-09-02 19:57:56.528 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:56.540 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 38.5791)
+2025-09-02 19:57:57.437 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:57.448 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 35.1369)
+2025-09-02 19:57:58.472 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:58.483 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 34.1544)
+2025-09-02 19:57:59.398 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:57:59.409 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 33.6196)
+2025-09-02 19:58:00.323 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:00.335 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 34.0522)
+2025-09-02 19:58:01.247 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:01.259 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 25.8125)
+2025-09-02 19:58:02.158 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:02.169 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 13.0593)
+2025-09-02 19:58:03.072 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:03.083 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 33.5358)
+2025-09-02 19:58:03.984 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:03.996 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 39.4166)
+2025-09-02 19:58:04.892 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:04.904 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 54.4407)
+2025-09-02 19:58:05.807 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:05.819 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 65.0110)
+2025-09-02 19:58:06.801 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:06.813 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 69.7258)
+2025-09-02 19:58:07.790 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:07.801 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 72.0504)
+2025-09-02 19:58:08.697 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:08.709 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 77.0559)
+2025-09-02 19:58:09.698 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:09.710 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 80.9499)
+2025-09-02 19:58:10.633 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:10.644 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 80.6799)
+2025-09-02 19:58:11.541 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:11.552 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 83.1532)
+2025-09-02 19:58:12.459 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:12.471 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 78.0305)
+2025-09-02 19:58:13.381 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:13.392 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 71.1516)
+2025-09-02 19:58:14.329 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:14.340 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 68.8518)
+2025-09-02 19:58:15.228 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:15.240 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 67.0958)
+2025-09-02 19:58:16.303 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:16.314 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 64.6397)
+2025-09-02 19:58:17.399 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:17.410 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 60.1202)
+2025-09-02 19:58:18.535 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:18.546 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 54.4035)
+2025-09-02 19:58:19.667 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:19.678 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 50.9113)
+2025-09-02 19:58:20.740 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:20.752 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 45.7021)
+2025-09-02 19:58:21.791 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:21.802 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 43.3752)
+2025-09-02 19:58:22.901 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:22.912 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.7166)
+2025-09-02 19:58:23.840 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:23.851 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 39.4214)
+2025-09-02 19:58:24.769 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:24.781 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 38.8399)
+2025-09-02 19:58:25.703 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:25.714 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 42.3888)
+2025-09-02 19:58:26.645 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:26.657 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.9482)
+2025-09-02 19:58:27.577 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:27.589 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 38.6557)
+2025-09-02 19:58:28.520 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:28.531 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 40.1868)
+2025-09-02 19:58:29.581 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-02 19:58:29.593 | DEBUG    | __main__:run:173 - 🔍 Checking for wake word (energy: 41.5210)

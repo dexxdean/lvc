@@ -1,0 +1,96 @@
+# Logic Voice Control - Master Configuration
+# Version: 0.0.1
+
+# Audio Configuration
+audio:
+  input_device: "Quantum 2"  # null = default device, or specify "Quantum 2"
+  sample_rate: 16000  # Hz - Unified for Whisper compatibility
+  channels: 1         # Mono
+  buffer_size: 512    # Samples per chunk
+  
+  # Voice Activity Detection
+  vad_aggressiveness: 2  # 0-3, higher = more aggressive
+  energy_threshold: 0.01  # Minimum energy for speech detection
+  
+# Wake Word Configuration
+wake_word:
+  models:
+    - "hey logic"
+    - "hallo logic"
+    - "hi logic"
+    - "computer"
+    - "logik"
+  threshold: 0.6  # Detection threshold (0.0-1.0)
+  
+  # Efficiency settings
+  check_interval: 0.5  # Check for wake word every N seconds
+  energy_threshold: 0.02  # Minimum audio energy before checking
+
+# Speech-to-Text Configuration  
+stt:
+  model: "base"  # tiny, base, small, medium, large (base is faster)
+  language: "de"  # German
+  device: "cpu"  # Force CPU to avoid MPS issues on Mac
+
+# Text-to-Speech Configuration
+feedback:
+  voice: "Anna"  # macOS voice (Anna for German)
+  rate: 200      # Words per minute
+  enabled: true  # Enable voice feedback
+  volume: 0.8    # 0.0-1.0
+
+# Logic Pro Integration (for future use)
+logic_pro:
+  enabled: false  # Disabled for test mode
+  app_name: "Logic Pro"
+  check_running: false
+
+# Commands Configuration
+commands:
+  timeout: 5.0           # Command timeout in seconds
+  confirmation: false    # Require confirmation for commands
+  
+  # Test mode commands (no Logic Pro required)
+  test_commands:
+    - intent: "test"
+      patterns: ["test", "teste", "testing"]
+      action: "log"
+      feedback: "Test erfolgreich"
+      
+    - intent: "hello"
+      patterns: ["hallo", "guten tag", "hi"]
+      action: "log"
+      feedback: "Hallo! Wie kann ich helfen?"
+      
+    - intent: "time"
+      patterns: ["zeit", "uhrzeit", "wie spät"]
+      action: "time"
+      feedback: "Es ist {time}"
+      
+    - intent: "stop"
+      patterns: ["stop", "stopp", "beenden", "ende"]
+      action: "exit"
+      feedback: "Auf Wiedersehen"
+
+  # Production commands (requires Logic Pro)
+  production_commands:
+    - intent: "play"
+      patterns: ["play", "wiedergabe", "start", "abspielen"]
+      action: 
+        type: "key_command"
+        value: "Space"
+      feedback: "Wiedergabe gestartet"
+      
+    - intent: "record"
+      patterns: ["record", "aufnahme", "aufnehmen"]
+      action:
+        type: "key_command" 
+        value: "R"
+      feedback: "Aufnahme gestartet"
+
+# System Settings
+system:
+  debug: false
+  dry_run: true  # Start in test mode
+  log_level: "INFO"
+  test_mode: true  # Enable test mode without Logic Pro

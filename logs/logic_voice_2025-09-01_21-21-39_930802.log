@@ -1,0 +1,88 @@
+2025-09-01 21:21:39.934 | INFO     | __main__:__init__:63 - 🎙️ Logic Voice Control starting...
+2025-09-01 21:21:39.934 | INFO     | __main__:__init__:64 - Mode: LIVE
+2025-09-01 21:21:39.934 | INFO     | __main__:__init__:65 - Latency: NORMAL
+2025-09-01 21:21:39.934 | INFO     | src.config.loader:_load_config:122 - 📋 Using default configuration
+2025-09-01 21:21:39.934 | DEBUG    | src.config.loader:_load_env_overrides:199 - 🔧 Audio device override: PreSonus Quantum 2
+2025-09-01 21:21:39.934 | DEBUG    | src.config.loader:_load_env_overrides:204 - 🌐 Language override: de
+2025-09-01 21:21:39.934 | DEBUG    | src.config.loader:_load_env_overrides:209 - 🤖 Model override: small
+2025-09-01 21:21:39.935 | DEBUG    | src.config.loader:_load_env_overrides:215 - 🎵 Sample rate override: 48000
+2025-09-01 21:21:39.935 | DEBUG    | src.config.loader:_load_env_overrides:232 - 📝 Log level override: INFO
+2025-09-01 21:21:39.935 | INFO     | src.config.loader:__init__:98 - ⚙️ Configuration loaded
+2025-09-01 21:21:39.935 | DEBUG    | src.config.loader:__init__:99 - 🔧 STT Model: small
+2025-09-01 21:21:39.935 | DEBUG    | src.config.loader:__init__:100 - 🌐 Language: de
+2025-09-01 21:21:39.935 | DEBUG    | src.config.loader:__init__:101 - 🎤 Audio Device: PreSonus Quantum 2
+2025-09-01 21:21:39.935 | INFO     | src.audio.capture:__init__:60 - 🎤 Initializing audio capture (device: PreSonus Quantum 2)
+2025-09-01 21:21:39.975 | WARNING  | src.audio.capture:_init_audio:75 - ⚠️ Device 'PreSonus Quantum 2' not found, using default
+2025-09-01 21:21:39.975 | SUCCESS  | src.audio.capture:_init_audio:85 - ✅ Audio system initialized
+2025-09-01 21:21:39.975 | INFO     | src.audio.wake_word:__init__:48 - 🎯 Wake word detector initialized
+2025-09-01 21:21:39.976 | INFO     | src.audio.wake_word:__init__:49 - 📝 Wake words: hey logic, logic, computer
+2025-09-01 21:21:39.976 | INFO     | src.audio.wake_word:__init__:50 - 🎚️ Threshold: 0.8
+2025-09-01 21:21:39.976 | INFO     | src.stt.whisper_adapter:__init__:53 - 🔧 Using CPU backend to avoid MPS compatibility issues
+2025-09-01 21:21:39.976 | INFO     | src.stt.whisper_adapter:__init__:57 - 🤖 Initializing Whisper STT (model: small, device: cpu)
+2025-09-01 21:21:41.449 | SUCCESS  | src.stt.whisper_adapter:__init__:62 - ✅ Whisper model 'small' loaded successfully
+2025-09-01 21:21:41.450 | INFO     | src.nlu.parser:__init__:82 - 🧠 Intent parser initialized with 11 intent types
+2025-09-01 21:21:41.450 | INFO     | src.router.dispatcher:__init__:50 - 🎮 Command dispatcher initialized (LIVE)
+2025-09-01 21:21:41.450 | INFO     | src.router.dispatcher:__init__:51 - 📋 Available commands: start_recording, stop_recording, play, pause, save_project, new_track, volume_up, volume_down, mute, undo, help
+2025-09-01 21:21:41.450 | INFO     | src.feedback.tts:__init__:38 - 🗣️ TTS Feedback initialized
+2025-09-01 21:21:41.450 | INFO     | src.feedback.tts:__init__:39 - 🖥️ System: Darwin
+2025-09-01 21:21:41.450 | INFO     | src.feedback.tts:__init__:40 - 🎤 Voice: default
+2025-09-01 21:21:41.450 | INFO     | src.feedback.tts:__init__:41 - ⏩ Rate: 200 WPM
+2025-09-01 21:21:41.479 | WARNING  | src.feedback.tts:_check_tts_availability:74 - ⚠️ TTS may not be available on Darwin
+2025-09-01 21:21:41.479 | SUCCESS  | __main__:_init_components:117 - ✅ All components initialized successfully
+2025-09-01 21:21:41.479 | DEBUG    | __main__:_debug_audio_devices:126 - 📋 Available audio devices:
+2025-09-01 21:21:41.479 | DEBUG    | __main__:_debug_audio_devices:129 -   [1] Quantum 2 - 22 channels
+2025-09-01 21:21:41.517 | SUCCESS  | src.audio.capture:start_stream:123 - 🎙️ Audio stream started
+2025-09-01 21:21:41.517 | INFO     | __main__:run:140 - 👂 Listening for wake word...
+2025-09-01 21:21:41.622 | DEBUG    | __main__:run:166 - 🔊 Audio chunk: 512 samples, RMS: 7.9435, Buffer: 10
+2025-09-01 21:21:41.729 | DEBUG    | __main__:run:166 - 🔊 Audio chunk: 512 samples, RMS: 8.5232, Buffer: 20
+2025-09-01 21:21:41.729 | DEBUG    | __main__:run:218 - 🔇 Audio too quiet (RMS: 6.94 < 10.0)
+2025-09-01 21:21:41.844 | DEBUG    | __main__:run:166 - 🔊 Audio chunk: 512 samples, RMS: 4.1772, Buffer: 30
+2025-09-01 21:21:42.996 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.66)
+2025-09-01 21:21:44.111 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:44.123 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.72)
+2025-09-01 21:21:45.194 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:45.206 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.77)
+2025-09-01 21:21:46.164 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:46.175 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.79)
+2025-09-01 21:21:47.206 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:47.218 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.82)
+2025-09-01 21:21:48.178 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:48.190 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.79)
+2025-09-01 21:21:49.160 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:49.171 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.82)
+2025-09-01 21:21:50.110 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:50.122 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.68)
+2025-09-01 21:21:51.109 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:51.121 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.71)
+2025-09-01 21:21:52.065 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:52.076 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.60)
+2025-09-01 21:21:53.048 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:53.059 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.58)
+2025-09-01 21:21:54.019 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:54.031 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.53)
+2025-09-01 21:21:54.981 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:54.993 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.43)
+2025-09-01 21:21:55.937 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:56.070 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 10.44)
+2025-09-01 21:21:57.096 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:57.107 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 12.31)
+2025-09-01 21:21:58.045 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:58.057 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 12.75)
+2025-09-01 21:21:59.106 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:21:59.118 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 15.39)
+2025-09-01 21:22:00.169 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:00.181 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 16.20)
+2025-09-01 21:22:01.212 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:01.224 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 18.14)
+2025-09-01 21:22:02.235 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:02.246 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 18.81)
+2025-09-01 21:22:03.276 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:03.287 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 29.94)
+2025-09-01 21:22:04.325 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:04.337 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 53.72)
+2025-09-01 21:22:05.316 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:05.328 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 60.10)
+2025-09-01 21:22:06.307 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:06.319 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 81.02)
+2025-09-01 21:22:07.274 | DEBUG    | src.stt.whisper_adapter:transcribe:123 - 🎯 Transcribed: ''
+2025-09-01 21:22:07.286 | DEBUG    | __main__:run:179 - 🎤 Processing audio (RMS: 85.08)
