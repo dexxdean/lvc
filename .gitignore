@@ -1,0 +1,61 @@
+x# ---- Python ----
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+*.log
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- Tools & Cache ----
+.cache/
+.tmp/
+logs/
+*.swp
+*.swo
+
+# ---- Environment ----
+.env
+.env.local
+.env.*
+!.env.example   # Beispiel-Env bleibt im Repo
+
+# ---- IDEs ----
+.vscode/
+.idea/# ---- Python ----
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+*.log
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- Tools & Cache ----
+.cache/
+.tmp/
+logs/
+*.swp
+*.swo
+
+# ---- Environment ----
+.env
+.env.local
+.env.*
+!.env.example   # Beispiel-Env bleibt im Repo
+
+# ---- IDEs ----
+.vscode/
+.idea/
