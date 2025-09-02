@@ -1,4 +1,34 @@
-x# ---- Python ----
+# ---- Python ----
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+*.log
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- Tools & Cache ----
+.cache/
+.tmp/
+logs/
+*.swp
+*.swo
+
+# ---- Environment ----
+.env
+.env.local
+.env.*
+!.env.example
+
+# ---- IDEs ----
+.vscode/
+.idea/x# ---- Python ----
 venv/
 __pycache__/
 *.pyc
